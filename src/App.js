@@ -7,7 +7,7 @@ import "./scss/app.scss";
 import pizzas from "./assets/pizzas.json"
 
 function App() {
-  return <div classNameName="App">
+  return <div className="App">
     <div className="wrapper">
       <Header />
       
@@ -22,6 +22,7 @@ function App() {
           <div className="content__items">
             {pizzas.map((obj) => (
               <PizzaBlock 
+                key={obj.id}
                 title={obj.title}
                 price={obj.price} 
                 imageUrl={obj.ImageUrl}

@@ -14,21 +14,21 @@ function PizzaBlock ({title, price, imageUrl, sizes, types} ) {
         <div className="pizza-block">
   <img
     className="pizza-block__image"
-    src={imageUrl}
+    src={"https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"}
     alt="Pizza"
   />
   <h4 className="pizza-block__title">{title}</h4>
   <div className="pizza-block__selector">
     <ul>
       {types.map((typeId) => (
-        <li onClick={() => setActiveType(typeId) } className={activeType === typeId ? 'active' : '' }>{typeNames[typeId]}</li>
+        <li key={typeId} onClick={() => setActiveType(typeId) } className={activeType === typeId ? 'active' : '' }>{typeNames[typeId]}</li>
       ))}
       
       
     </ul>
     <ul>
       {sizes.map((size, i) => (
-        <li onClick={() => setActiveSize(i)} className={activeSize === i ? "active" : ''}>{size} см.</li >
+        <li key={i} onClick={() => setActiveSize(i)} className={activeSize === i ? "active" : ''}>{size} см.</li >
       ))}
       
     </ul>
